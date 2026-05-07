@@ -8,9 +8,11 @@
 </head>
 <body>
 
-  <!-- НАВІГАЦІЯ -->
   <nav class="nav" id="mainNav">
-    <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+    <div class="nav__controls">
+      <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+      <button class="nav__theme-btn" id="themeToggle" onclick="toggleTheme()">☾ Темна</button>
+    </div>
     <ul class="nav__list">
       <li><a href="index.html">Головна</a></li>
       <li><a href="typesAI.html">Види ШІ</a></li>
@@ -20,21 +22,20 @@
     </ul>
   </nav>
 
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Вгору">↑</button>
+
   <main class="page">
 
-    <!-- ХЕДЕР -->
     <header class="page-header">
       <h1>Що таке Штучний Інтелект?</h1>
       <p>Технології майбутнього, які змінюють сьогодення</p>
     </header>
 
-    <!-- ВСТУП -->
     <section class="section">
       <p class="intro-text">Штучний інтелект (ШІ) — це широка галузь комп'ютерних наук, яка зосереджена на створенні систем, здатних виконувати завдання, що зазвичай потребують людського інтелекту. До таких завдань належать розпізнавання мови, прийняття рішень, переклад мов, розпізнавання образів та вирішення складних проблем.</p>
       <p class="intro-text">На відміну від традиційного програмного забезпечення, яке виконує чітко прописані інструкції, системи ШІ можуть навчатися на основі даних, адаптуватися до нових ситуацій та покращувати свою продуктивність з часом.</p>
     </section>
 
-    <!-- ВИДИ ШІ -->
     <section class="section">
       <h2>Основні види Штучного Інтелекту</h2>
       <p class="intro-text">ШІ класифікують за рівнем його можливостей та автономності.</p>
@@ -69,7 +70,6 @@
       </div>
     </section>
 
-    <!-- ЯК ПРАЦЮЄ -->
     <section class="section">
       <h2>Як працює Штучний Інтелект?</h2>
       <div class="card-grid">
@@ -92,7 +92,6 @@
       </div>
     </section>
 
-    <!-- ДЕ ВИКОРИСТОВУЄТЬСЯ -->
     <section class="section">
       <h2>Де використовується ШІ сьогодні?</h2>
       <ul class="styled-list">
@@ -104,7 +103,6 @@
       </ul>
     </section>
 
-    <!-- ЕТИКА -->
     <section class="section">
       <h2>Етика та Майбутнє ШІ</h2>
       <img class="section-img" src="https://mindscope.biz.ua/wp-content/uploads/2024/11/1ddea6f4-e0ab-4fa6-bf7f-edc367c4ecc5_result.jpg" alt="Етика ШІ">
@@ -114,14 +112,6 @@
 
   </main>
 
-  <script>
-    function toggleNav() {
-      document.getElementById('mainNav').classList.toggle('open');
-    }
-    document.addEventListener('click', function(e) {
-      const nav = document.getElementById('mainNav');
-      if (!nav.contains(e.target)) nav.classList.remove('open');
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

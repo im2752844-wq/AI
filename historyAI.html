@@ -9,7 +9,10 @@
 <body>
 
   <nav class="nav" id="mainNav">
-    <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+    <div class="nav__controls">
+      <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+      <button class="nav__theme-btn" id="themeToggle" onclick="toggleTheme()">☾ Темна</button>
+    </div>
     <ul class="nav__list">
       <li><a href="index.html">Головна</a></li>
       <li><a href="aboutAI.html">Про ШІ</a></li>
@@ -18,6 +21,8 @@
       <li><a href="newsAI.html">Новини</a></li>
     </ul>
   </nav>
+
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Вгору">↑</button>
 
   <main class="page">
 
@@ -154,14 +159,6 @@
 
   </main>
 
-  <script>
-    function toggleNav() {
-      document.getElementById('mainNav').classList.toggle('open');
-    }
-    document.addEventListener('click', function(e) {
-      const nav = document.getElementById('mainNav');
-      if (!nav.contains(e.target)) nav.classList.remove('open');
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
