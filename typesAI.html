@@ -1,176 +1,171 @@
 <!DOCTYPE html>
-<html>
-    <section>
-        <header>
-            <h1>Типи та Класифікація Штучного Інтелекту</h1>
-            <p>Детальний огляд різновидів ШІ за можливостями, технологіями та методами навчання</p>
-        </header>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Різновиди ШІ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav" id="mainNav">
+    <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+    <ul class="nav__list">
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="aboutAI.html">Про ШІ</a></li>
+      <li><a href="applications.html">Використання ШІ</a></li>
+      <li><a href="historyAI.html">Історія ШІ</a></li>
+      <li><a href="newsAI.html">Новини</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <header class="page-header">
+      <h1>Різновиди штучного інтелекту у 2026 році</h1>
+      <p>Від простих алгоритмів, які грають у шахи, до систем, що наближаються до людського мислення</p>
+    </header>
+
+    <section class="section">
+      <p class="intro-text">Штучний інтелект вже не майбутнє — це повсякденна реальність 2026 року. Але не весь ШІ однаковий. Сьогодні виділяють кілька ключових класифікацій, які показують, на якому етапі ми перебуваємо і куди рухаємося далі.</p>
     </section>
 
-    <section>
-        <h1>Навігація по сайту</h1>
-        <a href="index.html"><button>Головна</button></a><br>
-        <a href="aboutAI.html"><button>про ШІ</button></a><br>
-        <a href="applications.html"><button>використання ШІ</button></a><br>
-        <a href="historyAI.html"><button>Історія ШІ</button></a><br>
-        <a href="newsAI.html"><button>Новини</button></a><br>
-    </section>
-
-
-    <section>
-        <h2>1. Класифікація за рівнем можливостей</h2>
-        <p>Цей поділ базується на тому, наскільки широко ШІ може застосовувати свої знання.</p>
-        
-        <div>
-            <article>
-                <h3>Штучний вузький інтелект (ANI)</h3>
-                <p>Також відомий як "Слабкий ШІ". Спеціалізується на одній задачі.</p>
-                <div>
-                    <strong>Приклади:</strong>
-                    <ul>
-                        <li>Распізнавання облич</li>
-                        <li>Інтернет-пошук</li>
-                        <li>Автопілот Tesla</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article>
-                <h3>Штучний загальний інтелект (AGI)</h3>
-                <p>Також відомий як "Сильний ШІ". Має людський рівень інтелекту.</p>
-                <div>
-                    <strong>Характеристики:</strong>
-                    <ul>
-                        <li>Самосвідомість</li>
-                        <li>Навчання будь-яким навичкам</li>
-                        <li>Логічне мислення</li>
-                    </ul>
-                </div>
-            </article>
-
-            <article>
-                <h3>Штучний надінтелект (ASI)</h3>
-                <p>Інтелект, що перевершує людський у всіх аспектах.</p>
-                <div>
-                    <strong>Особливості:</strong>
-                    <ul>
-                        <li>Надлюдська креативність</li>
-                        <li>Миттєве вирішення проблем</li>
-                        <li>Теоретична концепція</li>
-                    </ul>
-                </div>
-            </article>
+    <section class="section">
+      <h2>1. За рівнем інтелектуальних можливостей</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Вузький ШІ (ANI / Weak AI)</h3>
+          <p>Це 99% усього, що ми бачимо у 2026 році. Виконує конкретні завдання краще за людину, але не розуміє нічого поза своєю вузькою спеціалізацією.</p>
+          <ul class="styled-list" style="margin-top:12px">
+            <li>Grok 4, Claude 4.5, Gemini 3, ChatGPT-5.x</li>
+            <li>Midjourney v7, Tesla FSD</li>
+            <li>Голосові асистенти, рекомендаційні системи</li>
+          </ul>
         </div>
-    </section>
-
-    <section>
-        <h2>2. Класифікація за технологіями та функціями</h2>
-        <p>ШІ можна розділити за тим, які саме технологічні підходи використовуються для його реалізації.</p>
-
-        <div>
-            <article>
-                <h3>Машинне навчання (Machine Learning)</h3>
-                <p>Системи, що покращуються з досвідом без явного програмування.</p>
-            </article>
-
-            <article>
-                <h3>Глибоке навчання (Deep Learning)</h3>
-                <p>Використання нейронних мереж для імітації роботи людського мозку.</p>
-            </article>
-
-            <article>
-                <h3>Обробка природної мови (NLP)</h3>
-                <p>Взаємодія комп'ютера з людською мовою (текст, голос).</p>
-            </article>
-
-            <article>
-                <h3>Робототехніка (Robotics)</h3>
-                <p>Поєднання ШІ з фізичними машинами для виконання дій у світі.</p>
-            </article>
-
-            <article>
-                <h3>Експертні системи</h3>
-                <p>Програми, що імітують прийняття рішень людським експертом.</p>
-            </article>
+        <div class="card">
+          <h3>Загальний ШІ (AGI / Strong AI)</h3>
+          <p>ШІ, здатний виконувати будь-яке інтелектуальне завдання на рівні або краще за людину — без перенавчання.</p>
+          <ul class="styled-list" style="margin-top:12px">
+            <li>Розуміє контекст, вчиться самостійно</li>
+            <li>Переносить знання між доменами</li>
+            <li>Стан 2026: ще немає повноцінного публічного AGI</li>
+          </ul>
         </div>
-    </section>
-
-    <section>
-        <h2>3. Типи навчання машин</h2>
-        <p>Як саме алгоритми отримують знання та дані для аналізу.</p>
-
-        <div>
-            <div>
-                <h3>Навчання з учителем (Supervised Learning)</h3>
-                <p>Модель навчається на розмічених даних, де правильна відповідь вже відома.</p>
-                <div>
-                    <strong>Застосування:</strong>
-                    <p>Класифікація спаму, прогнозування цін.</p>
-                </div>
-            </div>
-
-            <div>
-                <h3>Навчання без учителя (Unsupervised Learning)</h3>
-                <p>Модель шукає приховані патерни у даних без готових відповідей.</p>
-                <div>
-                    <strong>Застосування:</strong>
-                    <p>Кластеризация клієнтів, виявлення аномалій.</p>
-                </div>
-            </div>
-
-            <div>
-                <h3>Навчання з підкріпленням (Reinforcement Learning)</h3>
-                <p>Агент навчається через взаємодію з середовищем та отримання винагороди.</p>
-                <div>
-                    <strong>Застосування:</strong>
-                    <p>Навчання ігрових ботів, керування роботами.</p>
-                </div>
-            </div>
+        <div class="card">
+          <h3>Надінтелект (ASI)</h3>
+          <p>ШІ, який перевершує найрозумнішу людину в усіх інтелектуальних сферах — часто в тисячі разів.</p>
+          <ul class="styled-list" style="margin-top:12px">
+            <li>Рекурсивне самовдосконалення</li>
+            <li>Вирішення глобальних проблем за години</li>
+            <li>Поки теоретичний рівень</li>
+          </ul>
         </div>
+      </div>
     </section>
 
-    <section>
-        <h2>Порівняння основних підходів</h2>
-        <div>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Тип ШІ</th>
-                        <th>Складність</th>
-                        <th>Автономність</th>
-                        <th>Статус</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ANI (Вузький)</td>
-                        <td>Низька/Середня</td>
-                        <td>Обмежена</td>
-                        <td>Існує сьогодні</td>
-                    </tr>
-                    <tr>
-                        <td>AGI (Загальний)</td>
-                        <td>Висока</td>
-                        <td>Повна</td>
-                        <td>В розробці</td>
-                    </tr>
-                    <tr>
-                        <td>ASI (Надінтелект)</td>
-                        <td>Надзвичайна</td>
-                        <td>Абсолютна</td>
-                        <td>Теоретичний</td>
-                    </tr>
-                </tbody>
-            </table>
+    <section class="section">
+      <h2>2. За принципом роботи та пам'яттю</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Реактивні машини</h3>
+          <p>Не мають пам'яті, реагують лише на поточну ситуацію.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Приклад:</strong> IBM Deep Blue (шахи 1997). У 2026 майже не використовуються самостійно.</p>
         </div>
-    </section>
-
-    <section>
-        <h2>Який тип ШІ найважливіший?</h2>
-        <div>
-            <p>Вибір типу ШІ залежить від задачі. Для бізнесу сьогодні найважливішим є <strong>ANI</strong> та <strong>Машинне навчання</strong>, оскільки вони вже приносять реальну користь.</p>
-            <p>Однак дослідження у сфері <strong>AGI</strong> продовжуються, оскільки це наступний етап еволюції технологій.</p>
+        <div class="card">
+          <h3>Обмежена пам'ять</h3>
+          <p>Враховують минулі дані, навчаються на них. Це основа всього, що працює сьогодні.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Приклади:</strong> усі сучасні LLM, автономні авто, agentic AI.</p>
         </div>
+        <div class="card">
+          <h3>Теорія розуму</h3>
+          <p>Розуміє емоції, наміри, соціальний контекст людей.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Стан 2026:</strong> перші прототипи в дослідницьких моделях.</p>
+        </div>
+        <div class="card">
+          <h3>Самосвідомий ШІ</h3>
+          <p>Має власну свідомість, суб'єктивний досвід.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Стан 2026:</strong> наукова фантастика, жодних підтверджених прикладів.</p>
+        </div>
+      </div>
+      <p class="intro-text" style="margin-top:24px">У 2026 активно розвиваються: <strong>Agentic AI</strong> (автономні агенти), <strong>Multimodal AI</strong> (текст + зображення + відео + звук), <strong>Reasoning models</strong> (з покращеним логічним мисленням).</p>
     </section>
 
+    <section class="section">
+      <h2>3. Класифікація за технологіями</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Машинне навчання</h3>
+          <p>Системи, що покращуються з досвідом без явного програмування.</p>
+        </div>
+        <div class="card">
+          <h3>Глибоке навчання</h3>
+          <p>Використання нейронних мереж для імітації роботи людського мозку.</p>
+        </div>
+        <div class="card">
+          <h3>Обробка природної мови (NLP)</h3>
+          <p>Взаємодія комп'ютера з людською мовою (текст, голос).</p>
+        </div>
+        <div class="card">
+          <h3>Робототехніка</h3>
+          <p>Поєднання ШІ з фізичними машинами для виконання дій у реальному світі.</p>
+        </div>
+        <div class="card">
+          <h3>Експертні системи</h3>
+          <p>Програми, що імітують прийняття рішень людським експертом.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Типи навчання машин</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Навчання з учителем</h3>
+          <p>Модель навчається на розмічених даних, де правильна відповідь вже відома.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Застосування:</strong> класифікація спаму, прогнозування цін.</p>
+        </div>
+        <div class="card">
+          <h3>Навчання без учителя</h3>
+          <p>Модель шукає приховані патерни у даних без готових відповідей.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Застосування:</strong> кластеризація клієнтів, виявлення аномалій.</p>
+        </div>
+        <div class="card">
+          <h3>Навчання з підкріпленням</h3>
+          <p>Агент навчається через взаємодію з середовищем та отримання винагороди.</p>
+          <p style="color:var(--text-muted); margin-top:8px; font-size:0.9rem"><strong>Застосування:</strong> навчання ігрових ботів, керування роботами.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Порівняння основних типів</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Тип ШІ</th>
+            <th>Складність</th>
+            <th>Автономність</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ANI (Вузький)</td><td>Низька / Середня</td><td>Обмежена</td><td>Існує сьогодні</td></tr>
+          <tr><td>AGI (Загальний)</td><td>Висока</td><td>Повна</td><td>В розробці</td></tr>
+          <tr><td>ASI (Надінтелект)</td><td>Надзвичайна</td><td>Абсолютна</td><td>Теоретичний</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('mainNav');
+      if (!nav.contains(e.target)) nav.classList.remove('open');
+    });
+  </script>
+</body>
 </html>

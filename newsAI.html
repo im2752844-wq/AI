@@ -1,110 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новини ШІ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <section>
-        <header>
-            <h1>Новини Штучного Інтелекту</h1>
-            <p>Останні події, відкриття та тенденції у світі ШІ</p>
-        </header>
+  <nav class="nav" id="mainNav">
+    <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+    <ul class="nav__list">
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="aboutAI.html">Про ШІ</a></li>
+      <li><a href="typesAI.html">Види ШІ</a></li>
+      <li><a href="applications.html">Використання ШІ</a></li>
+      <li><a href="historyAI.html">Історія ШІ</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <header class="page-header">
+      <h1>Новини Штучного Інтелекту</h1>
+      <p>Останні події, відкриття та тенденції у світі ШІ</p>
+    </header>
+
+    <section class="section">
+      <h2>Останні новини</h2>
+
+      <div class="news-article">
+        <h3>Нові можливості великих мовних моделей</h3>
+        <time datetime="2024-01-15">15 січня 2024</time>
+        <p>Провідні лабораторії ШІ анонсували оновлення своїх мовних моделей з покращеними можливостями розуміння контексту та роботи з українською мовою.</p>
+        <a href="#">Читати далі</a>
+      </div>
+
+      <div class="news-article">
+        <h3>ШІ в медицині: новий прорив у діагностиці</h3>
+        <time datetime="2024-01-12">12 січня 2024</time>
+        <p>Дослідники розробили алгоритм, який виявляє онкологічні захворювання на ранніх стадіях з точністю 95%.</p>
+        <a href="#">Читати далі</a>
+      </div>
+
+      <div class="news-article">
+        <h3>Європа ухвалила закон про регулювання ШІ</h3>
+        <time datetime="2024-01-10">10 січня 2024</time>
+        <p>Європейський парламент затвердив AI Act — перший комплексний закон про регулювання штучного інтелекту.</p>
+        <a href="#">Читати далі</a>
+      </div>
+
+      <div class="news-article">
+        <h3>Генерація відео: нова ера контенту</h3>
+        <time datetime="2024-01-08">8 січня 2024</time>
+        <p>З'явилися нові інструменти для створення реалістичних відео за текстовим описом тривалістю до хвилини.</p>
+        <a href="#">Читати далі</a>
+      </div>
     </section>
 
-    <section>
-        <h1>Навігація по сайту</h1>
-        <a href="index.html"><button>Головна</button></a><br>
-        <a href="aboutAI.html"><button>Про ШІ</button></a><br>
-        <a href="typesAI.html"><button>Види ШІ</button></a><br>
-        <a href="applications.html"><button>використання ШІ</button></a><br>
-        <a href="historyAI.html"><button>Історія ШІ</button></a><br>
-    </section>
-
-    <section>
-        <h2>Останні новини</h2>
-        
-        <article>
-            <header>
-                <h3>Нові можливості великих мовних моделей</h3>
-                <time datetime="2024-01-15">15 січня 2024</time>
-            </header>
-            <p>Провідні лабораторії ШІ анонсували оновлення своїх мовних моделей з покращеними можливостями розуміння контексту та роботи з українською мовою.</p>
-            <a href="#">Читати далі</a>
-        </article>
-
-        <article>
-            <header>
-                <h3>ШІ в медицині: новий прорив у діагностиці</h3>
-                <time datetime="2024-01-12">12 січня 2024</time>
-            </header>
-            <p>Дослідники розробили алгоритм, який виявляє онкологічні захворювання на ранніх стадіях з точністю 95%.</p>
-            <a href="#">Читати далі</a>
-        </article>
-
-        <article>
-            <header>
-                <h3>Європа ухвалила закон про регулювання ШІ</h3>
-                <time datetime="2024-01-10">10 січня 2024</time>
-            </header>
-            <p>Європейський парламент затвердив AI Act — перший комплексний закон про регулювання штучного інтелекту.</p>
-            <a href="#">Читати далі</a>
-        </article>
-
-        <article>
-            <header>
-                <h3>Генерація відео: нова ера контенту</h3>
-                <time datetime="2024-01-08">8 січня 2024</time>
-            </header>
-            <p>З'явилися нові інструменти для створення реалістичних відео за текстовим описом тривалістю до хвилини.</p>
-            <a href="#">Читати далі</a>
-        </article>
-    </section>
-
-    <section>
-        <h2>Категорії</h2>
-        <div>
-            <section>
-                <h3>Технології</h3>
-                <p>Нові моделі, алгоритми та інструменти розробки</p>
-                <a href="https://career.softserveinc.com/uk-ua/stories/best-generative-ai-tools-for-developers-and-businesses">Дивитися новини</a>
-            </section>
-            <section>
-                <h3>Бізнес</h3>
-                <p>Впровадження ШІ в компаніях, стартапи, інвестиції</p>
-                <a href="https://blog.depositphotos.com/ua/yak-zapustiti-shi-startap.html">Дивитися новини</a>
-            </section>
-            <section>
-                <h3>Наука</h3>
-                <p>Дослідження, відкриття та академічні публікації</p>
-                <a href="https://mindthegraph.com/blog/uk/ai-in-academic-research/">Дивитися новини</a>
-            </section>
-            <section>
-                <h3>Етика та регулювання</h3>
-                <p>Закони, безпека та суспільний вплив ШІ</p>
-                <a href="https://biz.ligazakon.net/analitycs/241001_pravove-regulyuvannya-vikoristannya-shtuchnogo-ntelektu-v-ukran-ta-s">Дивитися новини</a>
-            </section>
+    <section class="section">
+      <h2>Категорії</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Технології</h3>
+          <p>Нові моделі, алгоритми та інструменти розробки</p>
+          <a href="https://career.softserveinc.com/uk-ua/stories/best-generative-ai-tools-for-developers-and-businesses" style="display:inline-block; margin-top:12px; font-size:0.9rem">Дивитися новини →</a>
         </div>
+        <div class="card">
+          <h3>Бізнес</h3>
+          <p>Впровадження ШІ в компаніях, стартапи, інвестиції</p>
+          <a href="https://blog.depositphotos.com/ua/yak-zapustiti-shi-startap.html" style="display:inline-block; margin-top:12px; font-size:0.9rem">Дивитися новини →</a>
+        </div>
+        <div class="card">
+          <h3>Наука</h3>
+          <p>Дослідження, відкриття та академічні публікації</p>
+          <a href="https://mindthegraph.com/blog/uk/ai-in-academic-research/" style="display:inline-block; margin-top:12px; font-size:0.9rem">Дивитися новини →</a>
+        </div>
+        <div class="card">
+          <h3>Етика та регулювання</h3>
+          <p>Закони, безпека та суспільний вплив ШІ</p>
+          <a href="https://biz.ligazakon.net/analitycs/241001_pravove-regulyuvannya-vikoristannya-shtuchnogo-ntelektu-v-ukran-ta-s" style="display:inline-block; margin-top:12px; font-size:0.9rem">Дивитися новини →</a>
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>Популярне цього тижня</h2>
-        <ul>
-            <li>
-                <article>
-                    <h3>Як ШІ змінює ринок праці в 2024</h3>
-                    <p>Аналіз впливу автоматизації на різні професії</p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3>Порівняння найкращих мовних моделей</h3>
-                    <p>Тестування GPT, Claude, Gemini та інших</p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3>Безпека ШІ: головні загрози</h3>
-                    <p>Що кажуть експерти про ризики технології</p>
-                </article>
-            </li>
-        </ul>
+    <section class="section">
+      <h2>Популярне цього тижня</h2>
+      <ul class="styled-list">
+        <li>
+          <strong>Як ШІ змінює ринок праці в 2024</strong><br>
+          <span style="font-size:0.9rem">Аналіз впливу автоматизації на різні професії</span>
+        </li>
+        <li>
+          <strong>Порівняння найкращих мовних моделей</strong><br>
+          <span style="font-size:0.9rem">Тестування GPT, Claude, Gemini та інших</span>
+        </li>
+        <li>
+          <strong>Безпека ШІ: головні загрози</strong><br>
+          <span style="font-size:0.9rem">Що кажуть експерти про ризики технології</span>
+        </li>
+      </ul>
     </section>
 
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('mainNav');
+      if (!nav.contains(e.target)) nav.classList.remove('open');
+    });
+  </script>
+</body>
 </html>

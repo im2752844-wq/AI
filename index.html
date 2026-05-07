@@ -1,93 +1,133 @@
 <!DOCTYPE html>
-<html>
-    <header>
-        <h1>Різновиди штучного інтелекту у 2026 році</h1>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ШІ — Штучний Інтелект</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <p>Від простих алгоритмів, які грають у шахи, до систем, що наближаються до людського мислення</p> 
-        <p>Штучний інтелект вже не майбутнє — це повсякденна реальність 2026 року. Але не весь ШІ однаковий. Сьогодні виділяють кілька ключових класифікацій, які показують, на якому етапі ми перебуваємо і куди рухаємося далі.</p>
+  <nav class="nav" id="mainNav">
+    <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+    <ul class="nav__list">
+      <li><a href="aboutAI.html">Про ШІ</a></li>
+      <li><a href="typesAI.html">Види ШІ</a></li>
+      <li><a href="applications.html">Використання ШІ</a></li>
+      <li><a href="historyAI.html">Історія ШІ</a></li>
+      <li><a href="newsAI.html">Новини</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <!-- HERO -->
+    <header class="page-header" style="padding: 60px 0 40px; border-bottom: none;">
+      <p style="color: var(--accent); font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Ласкаво просимо</p>
+      <h1 style="font-size: 3rem; margin-bottom: 16px;">Штучний Інтелект:<br>що це і навіщо?</h1>
+      <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 580px;">Цей сайт — простий путівник у світ ШІ. Тут зібрано все найважливіше: від базових понять до реальних застосувань та новин.</p>
+      <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="aboutAI.html" style="background: var(--accent); color: #fff; padding: 12px 28px; border-radius: var(--radius); text-decoration: none; font-size: 0.97rem; transition: background 0.2s;">Почати читати</a>
+        <a href="historyAI.html" style="border: 1px solid var(--border); color: var(--text); padding: 12px 28px; border-radius: var(--radius); text-decoration: none; font-size: 0.97rem; transition: background 0.2s;">Історія ШІ</a>
+      </div>
     </header>
 
-    <section>
-        <h1>Навігація по сайту</h1>
-        <a href="aboutAI.html"><button>Про ШІ</button></a><br>
-        <a href="typesAI.html"><button>Види ШІ</button></a><br>
-        <a href="applications.html"><button>використання ШІ</button></a><br>
-        <a href="historyAI.html"><button>Історія ШІ</button></a><br>
-        <a href="newsAI.html"><button>Новини</button></a><br>
+    <!-- СТАТИСТИКА -->
+    <section class="section">
+      <div class="card-grid">
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 4px;">1956</h3>
+          <p>Рік народження ШІ як науки — Дартмутська конференція</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 4px;">99%</h3>
+          <p>Усього ШІ навколо нас — це вузький ШІ (ANI)</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <h3 style="font-size: 2rem; color: var(--accent); margin-bottom: 4px;">2026</h3>
+          <p>Рік, коли ШІ став частиною кожного робочого місця</p>
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>1. За рівнем інтелектуальних можливостей</h2>
-
-        <div >
-            <h3>Вузький ШІ (Narrow AI / ANI / Weak AI)</h3>
-            <p>Це 99% усього, що ми бачимо у 2026 році.</p>
-            <ul>
-                <li>Виконує конкретні завдання краще за людину</li>
-                <li>Не розуміє нічого поза своєю вузькою спеціалізацією</li>
-                <li>Приклади: Grok 4, Claude 4.5, Gemini 3, ChatGPT-5.x, Midjourney v7, Tesla FSD, DeepSeek-R1, голосові асистенти, рекомендаційні системи, розпізнавання зображень/голосу</li>
-            </ul>
-            <p >Домінує повністю. Саме цей тип приносить мільярди доларів щороку.</p>
-        </div>
-
-        <div >
-            <h3>Загальний ШІ (Artificial General Intelligence / AGI / Strong AI)</h3>
-            <p>ШІ, здатний виконувати будь-яке інтелектуальне завдання на рівні або краще за людину — без перенавчання під кожну нову задачу.</p>
-            <ul>
-                <li>Розуміє контекст, вчиться самостійно, переносить знання між доменами</li>
-                <li>Може одночасно бути програмістом, лікарем, юристом, творцем</li>
-                <li>Стан на 2026: ще немає повноцінного публічного AGI</li>
-                <li>Прогнози: Elon Musk, Dario Amodei та деякі лабораторії вважають можливим появу перших версій до кінця 2026 – середини 2027</li>
-            </ul>
-            <p >Багато експертів (Stanford, Gary Marcus) прогнозують: AGI у 2026 ще не з’явиться, але ми дуже близько.</p>
-        </div>
-
-        
-
-        <div >
-            <h3>Надінтелект (Artificial Superintelligence / ASI)</h3>
-            <p>ШІ, який перевершує найрозумнішу людину в усіх інтелектуальних сферах — часто в тисячі разів.</p>
-            <ul>
-                <li>Може рекурсивно покращувати себе (швидке самонавчання)</li>
-                <li>Потенційно вирішує глобальні проблеми за години</li>
-                <li>Також несе екзистенційні ризики</li>
-            </ul>
-            <p >Поки теоретичний рівень. Більшість дослідників вважає його неминучим після AGI (можливо, через 2–10 років після першого AGI).</p>
-        </div>
+    <!-- ЩО ТАКЕ ШІ -->
+    <section class="section">
+      <h2>Що таке Штучний Інтелект?</h2>
+      <p class="intro-text">Штучний інтелект — це галузь комп'ютерних наук, яка навчає машини мислити, навчатися та приймати рішення. На відміну від звичайних програм, ШІ не просто виконує інструкції — він адаптується, покращується і знаходить рішення самостійно.</p>
+      <p class="intro-text">Сьогодні ШІ є скрізь: у смартфоні, який розпізнає ваше обличчя, у стрімінгу, який підбирає фільм, у лікарні, де алгоритм аналізує знімки. Це не фантастика — це реальність 2026 року.</p>
     </section>
 
-    <section>
-    <h2>2. За принципом роботи та «пам’яттю» (4 класичні типи + тренди 2026)</h2>
-
-    <div >
-        <div >
-        <h3>Реактивні машини</h3>
-            <p>Не мають пам’яті, реагують лише на поточну ситуацію.</p>
-            <p><b>Приклад:</b> IBM Deep Blue (шахи 1997), більшість ранніх експертних систем.</p>
-            <p >У 2026 майже не використовуються самостійно.</p>
-        </div>
-
-        <div >
-            <h3>Обмежена пам’ять (Limited Memory)</h3>
-            <p>Враховують минулі дані, навчаються на них.</p>
-            <p><b>Приклади:</b> усі сучасні великі моделі (LLM), автономні авто, рекомендаційні системи, agentic AI, мультимодальні моделі 2026.</p>
-            <p >Це основа всього, що працює сьогодні.</p>
-        </div>
-
-        <div >
-        <h3>Теорія розуму (Theory of Mind)</h3>
-            <p>Розуміє емоції, наміри, соціальний контекст людей.</p>
-            <p><b>Стан 2026:</b> перші прототипи в дослідницьких моделях, але ще далеко від комерційного використання.</p>
-        </div>
-
-        <div>
-            <h3>Самосвідомий ШІ (Self-aware AI)</h3>
-            <p>Має власну свідомість, суб’єктивний досвід, «я».</p>
-            <p><b>Стан 2026:</b> наукова фантастика, жодних підтверджених прикладів.</p>
-        </div>
-    </div>
-
-    <p>У 2026 активно розвиваються: <b>Agentic AI</b> (автономні агенти), <b>Multimodal AI</b> (текст + зображення + відео + звук), <b>Reasoning models</b> (з покращеним логічним мисленням).</p>
+    <!-- РОЗДІЛИ САЙТУ -->
+    <section class="section">
+      <h2>Розділи сайту</h2>
+      <div class="card-grid">
+        <a href="aboutAI.html" style="text-decoration: none;">
+          <div class="card">
+            <h3>🧠 Про ШІ</h3>
+            <p>Базові поняття, як працює ШІ, машинне навчання та нейронні мережі — пояснено простою мовою.</p>
+          </div>
+        </a>
+        <a href="typesAI.html" style="text-decoration: none;">
+          <div class="card">
+            <h3>📊 Види ШІ</h3>
+            <p>ANI, AGI, ASI — чим відрізняються типи ШІ та де ми знаходимося зараз у 2026 році.</p>
+          </div>
+        </a>
+        <a href="applications.html" style="text-decoration: none;">
+          <div class="card">
+            <h3>⚙️ Використання</h3>
+            <p>Медицина, фінанси, освіта, транспорт — де реально застосовується ШІ вже сьогодні.</p>
+          </div>
+        </a>
+        <a href="historyAI.html" style="text-decoration: none;">
+          <div class="card">
+            <h3>📅 Історія</h3>
+            <p>Від тесту Тюрінга 1950 року до ChatGPT та великих мовних моделей — ключові події.</p>
+          </div>
+        </a>
+        <a href="newsAI.html" style="text-decoration: none;">
+          <div class="card">
+            <h3>📰 Новини</h3>
+            <p>Останні події у світі ШІ: нові моделі, закони, прориви в науці та бізнесі.</p>
+          </div>
+        </a>
+      </div>
     </section>
 
+    <!-- ЦІКАВИЙ ФАКТ -->
+    <section class="section">
+      <h2>Чи знали ви?</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>AlphaFold змінив біологію</h3>
+          <p>ШІ від Google розв'язав задачу згортання білків, над якою вчені працювали 50 років. За кілька місяців він передбачив структуру понад 200 мільйонів білків.</p>
+        </div>
+        <div class="card">
+          <h3>ШІ вже пише код</h3>
+          <p>За даними GitHub, понад 40% нового коду у 2025 році написано або доопрацьовано за допомогою ШІ-інструментів на кшталт Copilot та Claude.</p>
+        </div>
+        <div class="card">
+          <h3>Deep Blue vs Каспаров</h3>
+          <p>У 1997 році комп'ютер IBM вперше переміг чемпіона світу з шахів. Це стало переломним моментом в історії ШІ та довело, що машини можуть перевершити людину.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.88rem; text-align: center;">
+      <p>Навчальний сайт про Штучний Інтелект · 2026</p>
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('mainNav');
+      if (!nav.contains(e.target)) nav.classList.remove('open');
+    });
+  </script>
+</body>
 </html>
