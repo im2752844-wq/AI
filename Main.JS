@@ -1,13 +1,10 @@
-/* ==============================================
-   main.js
-   Підключи до КОЖНОЇ сторінки перед </body>:
-   <script src="main.js"></script>
-   ============================================== */
+
+const h1 = document.querySelectorAll("h1");
+h1.forEach(function(el){
+  el.style.color = 'red';
+});
 
 
-/* ================================================
-   1. НАВІГАЦІЯ — бургер-меню
-   ================================================ */
 function toggleNav() {
   document.getElementById('mainNav').classList.toggle('open');
 }
@@ -19,11 +16,6 @@ document.addEventListener('click', function (e) {
   }
 });
 
-
-/* ================================================
-   2. ВИДІЛЕННЯ ПОТОЧНОЇ СТОРІНКИ В НАВІГАЦІЇ
-   Автоматично порівнює href посилань з URL сторінки
-   ================================================ */
 (function highlightActivePage() {
   // Отримуємо ім'я файлу поточної сторінки (напр. "aboutAI.html")
   const currentFile = location.pathname.split('/').pop() || 'index.html';
@@ -38,10 +30,6 @@ document.addEventListener('click', function (e) {
 })();
 
 
-/* ================================================
-   3. ПЕРЕМИКАЧ ТЕМИ (темна / світла)
-   Зберігає вибір у localStorage між сесіями
-   ================================================ */
 (function initTheme() {
   // Перевіряємо збережений вибір, або системні налаштування
   const saved       = localStorage.getItem('theme');
@@ -73,11 +61,6 @@ function toggleTheme() {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
-
-/* ================================================
-   4. КНОПКА "ВГОРУ"
-   З'являється після прокрутки 320px вниз
-   ================================================ */
 (function initScrollTopButton() {
   const btn = document.getElementById('scrollTopBtn');
   if (!btn) return;
@@ -98,11 +81,6 @@ function toggleTheme() {
 })();
 
 
-/* ================================================
-   5. ПЛАВНА АНІМАЦІЯ ПОЯВИ ЕЛЕМЕНТІВ
-   Використовує IntersectionObserver — елементи
-   з'являються коли потрапляють у зону видимості
-   ================================================ */
 (function initFadeInAnimations() {
   // Вибираємо всі елементи, які будуть анімуватись
   const animatedElements = document.querySelectorAll(

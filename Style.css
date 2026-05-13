@@ -1,13 +1,6 @@
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-
-/* ==============================================
-   ТЕМИ — CSS змінні
-   [data-theme="dark"]  → темна
-   [data-theme="light"] → світла
-   ============================================== */
-
 /* Темна тема (за замовчуванням) */
 :root,
 [data-theme="dark"] {
@@ -17,7 +10,7 @@
   --text:            #e8eaf0;
   --text-muted:      #7a8099;
   --accent:          #4f8ef7;
-  --accent-hover:    #7c5cfc;
+  --accent-hover:    #130351;
   --border:          rgba(255, 255, 255, 0.07);
   --shadow:          rgba(0, 0, 0, 0.55);
   --nav-bg:          #151820;
@@ -75,10 +68,6 @@ body {
   min-height: 100vh;
 }
 
-
-/* ==============================================
-   НАВІГАЦІЯ
-   ============================================== */
 .nav {
   position: fixed;
   top: 18px;
@@ -185,10 +174,6 @@ body {
   pointer-events: none; /* не можна клікнути на поточну сторінку */
 }
 
-
-/* ==============================================
-   КОНТЕНТ
-   ============================================== */
 .page {
   max-width: 900px;
   margin:    0 auto;
@@ -236,6 +221,7 @@ body {
   margin-bottom: 18px;
 }
 
+
 .card:hover {
   background:   var(--bg-card-hover);
   border-color: rgba(79, 142, 247, 0.2);
@@ -260,6 +246,8 @@ body {
 
 /* ===== СІТКА КАРТОК ===== */
 .card-grid {
+  display: flex;
+  flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 18px;
@@ -360,10 +348,6 @@ a:hover            { color: var(--accent-hover); }
 
 .video-wrap iframe { display: block; width: 100%; height: 315px; }
 
-
-/* ==============================================
-   КНОПКА "ВГОРУ"
-   ============================================== */
 .scroll-top-btn {
   position:      fixed;
   bottom:        32px;
@@ -424,10 +408,6 @@ a:hover            { color: var(--accent-hover); }
   transform: translateY(0);
 }
 
-
-/* ==============================================
-   АДАПТИВ
-   ============================================== */
 @media (max-width: 600px) {
   .page-header h1 { font-size: 1.7rem; }
   .page           { padding: 48px 14px 60px; }
@@ -438,3 +418,50 @@ a:hover            { color: var(--accent-hover); }
   .nav__toggle,
   .nav__theme-btn { padding: 9px 13px; font-size: 0.88rem; }
 }
+
+.reviews-footer {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 40px 24px;
+  border-top: 1px solid var(--border);
+}
+.reviews-footer h2 {
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.reviews-footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.reviews-footer input,
+.reviews-footer select,
+.reviews-footer textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.97rem;
+}
+.reviews-footer button {
+  background: var(--btn-bg);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 24px;
+  cursor: pointer;
+  font-size: 0.97rem;
+  align-self: flex-start;
+}
+.review-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+.review-stars { color: #f5a623; margin-left: 10px; }
+.review-item p { color: var(--text-muted); margin-top: 6px; }

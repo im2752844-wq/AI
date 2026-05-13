@@ -8,11 +8,6 @@
 </head>
 <body>
 
-  <!-- ================================================
-       НАВІГАЦІЯ
-       Зміна №1: додано обгортку .nav__controls
-       Зміна №2: додано кнопку теми #themeToggle
-       ================================================ -->
   <nav class="nav" id="mainNav">
     <div class="nav__controls">
       <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
@@ -28,11 +23,6 @@
     </ul>
   </nav>
 
-  <!-- ================================================
-       КНОПКА "ВГОРУ"
-       Вставляється ОДИН РАЗ на кожній сторінці,
-       поза межами <main>. JS керує її видимістю.
-       ================================================ -->
   <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Вгору">↑</button>
 
   <main class="page">
@@ -70,28 +60,80 @@
       <p class="intro-text">Сьогодні ШІ є скрізь: у смартфоні, який розпізнає ваше обличчя, у стрімінгу, який підбирає фільм, у лікарні, де алгоритм аналізує знімки.</p>
     </section>
 
-    <footer style="margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.88rem; text-align: center;">
-      <p>Навчальний сайт про Штучний Інтелект · 2026</p>
-    </footer>
-
   </main>
 
-  <!-- ================================================
-       ПІДКЛЮЧЕННЯ JS — ЗАВЖДИ ОСТАННІМ перед </body>
-       ================================================ -->
-  <script src="main.js"></script>
+  <footer class="reviews-footer">
+    <h2>Відгуки про сайт</h2>
+
+    <form id="reviewForm">
+      <input id="rName" placeholder="Ваше ім'я" required />
+      <select id="rRating">
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+      <textarea id="rText" placeholder="Ваш відгук..." rows="3" required></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+
+    <div id="reviewsList"></div>
+  </footer>
+
+  <!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, orderBy, query }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // ВАШ КОНФІГ (замінити!)
+  const firebaseConfig = {
+  apiKey: "AIzaSyCNgTrWy9xxoLUjhzIakB2aZGshspXcQRg",
+  authDomain: "ai-web-29ad4.firebaseapp.com",
+  projectId: "ai-web-29ad4",
+  storageBucket: "ai-web-29ad4.firebasestorage.app",
+  messagingSenderId: "1005482222774",
+  appId: "1:1005482222774:web:d0bbe3c60fd82a8214f217",
+  measurementId: "G-TJXTRDE9QX"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ── Завантаження відгуків ──
+  async function loadReviews() {
+    const q = query(collection(db, "reviews"), orderBy("date", "desc"));
+    const snap = await getDocs(q);
+    const list = document.getElementById("reviewsList");
+    list.innerHTML = "";
+    snap.forEach(doc => {
+      const d = doc.data();
+      list.innerHTML += `
+        <div class="review-item">
+          <strong>${d.name}</strong>
+          <span class="review-stars">${"★".repeat(d.rating)}${"☆".repeat(5 - d.rating)}</span>
+          <p>${d.text}</p>
+        </div>`;
+    });
+  }
+
+  // ── Додавання відгуку ──
+  document.getElementById("reviewForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name   = document.getElementById("rName").value.trim();
+    const text   = document.getElementById("rText").value.trim();
+    const rating = parseInt(document.getElementById("rRating").value);
+    if (!name || !text) return;
+
+    await addDoc(collection(db, "reviews"), {
+      name, text, rating, date: new Date()
+    });
+    e.target.reset();
+    loadReviews();
+  });
+
+  loadReviews();
+</script>
 </body>
 </html>
-
-<!--
-=======================================================
-  ЩО ЗМІНИТИ НА КОЖНІЙ СТОРІНЦІ:
-  1. В <nav> замінити старий <button> + toggleNav()
-     на новий блок з .nav__controls (бургер + тема)
-  2. Додати <button class="scroll-top-btn" ...> після <nav>
-  3. Видалити старий <script> з toggleNav() в кінці
-  4. Додати <script src="main.js"></script> перед </body>
-  Більше нічого чіпати не треба — JS сам визначить
-  поточну сторінку і виділить потрібне посилання!
-=======================================================
--->
