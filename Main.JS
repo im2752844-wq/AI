@@ -6,7 +6,7 @@ function toggleNav() {
 window.addEventListener('scroll', function() {
   var bg = document.getElementById('parallaxBg');
   if (bg) {
-    bg.style.transform = 'translateY(' + window.scrollY * 0.4 + 'px)';
+    bg.style.transform = `translateY(${window.scrollY * 0.2}px)`;
   }
 }, { passive: true });
 
