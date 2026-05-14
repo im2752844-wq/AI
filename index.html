@@ -25,17 +25,22 @@
 
   <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Вгору">↑</button>
 
+  <div class="parallax-hero">
+      <div class="parallax-hero__bg" id="parallaxBg"></div>
+      <div class="parallax-hero__content">
+        <p style="color: var(--accent); font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Ласкаво просимо</p>
+        <h1>Штучний Інтелект:<br>що це і навіщо?</h1>
+        <p style="font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 580px;">Цей сайт — простий путівник у світ ШІ. Тут зібрано все найважливіше: від базових понять до реальних застосувань та новин.</p>
+        <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="aboutAI.html" style="background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Почати читати</a>
+        <a href="historyAI.html" style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Історія ШІ</a>
+      </div>
+    </div>
+  </div>
+
   <main class="page">
 
-    <header class="page-header">
-      <p style="color: var(--accent); font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Ласкаво просимо</p>
-      <h1 style="font-size: 3rem; margin-bottom: 16px;">Штучний Інтелект:<br>що це і навіщо?</h1>
-      <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 580px;">Цей сайт — простий путівник у світ ШІ. Тут зібрано все найважливіше: від базових понять до реальних застосувань та новин.</p>
-      <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
-        <a href="aboutAI.html" style="background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Почати читати</a>
-        <a href="historyAI.html" style="border: 1px solid var(--border); color: var(--text); padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Історія ШІ</a>
-      </div>
-    </header>
+    
 
     <section class="section">
       <div class="card-grid">
@@ -66,7 +71,7 @@
     <h2>Відгуки про сайт</h2>
 
     <form id="reviewForm">
-      <input id="rName" placeholder="Ваше ім'я" required />
+      <input id="rName" placeholder="Ваше ім'я" required autocomplete="off" />
       <select id="rRating">
         <option value="5">★★★★★</option>
         <option value="4">★★★★☆</option>
@@ -81,13 +86,13 @@
     <div id="reviewsList"></div>
   </footer>
 
-  <!-- Firebase -->
+<script src="Main.JS"></script>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, addDoc, getDocs, orderBy, query }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  // ВАШ КОНФІГ (замінити!)
   const firebaseConfig = {
   apiKey: "AIzaSyCNgTrWy9xxoLUjhzIakB2aZGshspXcQRg",
   authDomain: "ai-web-29ad4.firebaseapp.com",
@@ -101,7 +106,6 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  // ── Завантаження відгуків ──
   async function loadReviews() {
     const q = query(collection(db, "reviews"), orderBy("date", "desc"));
     const snap = await getDocs(q);
@@ -118,7 +122,6 @@
     });
   }
 
-  // ── Додавання відгуку ──
   document.getElementById("reviewForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const name   = document.getElementById("rName").value.trim();

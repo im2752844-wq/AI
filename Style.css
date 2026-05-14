@@ -465,3 +465,47 @@ a:hover            { color: var(--accent-hover); }
 }
 .review-stars { color: #f5a623; margin-left: 10px; }
 .review-item p { color: var(--text-muted); margin-top: 6px; }
+
+/* ===== ПАРАЛАКС ГЕРОЙ ===== */
+.parallax-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-hero__bg {
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 100%;
+  height: 160%;
+  background-image: url('https://journal.ilounge.ua/files/articles/kak-narisovat-portret-v-ii-06.webp');
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+/* Темний оверлей зверху щоб текст читався */
+.parallax-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.parallax-hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 24px;
+  color: #fff;
+}
+
+.parallax-hero__content h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: #fff;
+}

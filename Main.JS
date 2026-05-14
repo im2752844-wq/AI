@@ -1,13 +1,14 @@
-
-const h1 = document.querySelectorAll("h1");
-h1.forEach(function(el){
-  el.style.color = 'red';
-});
-
-
 function toggleNav() {
   document.getElementById('mainNav').classList.toggle('open');
 }
+
+// Паралакс
+window.addEventListener('scroll', function() {
+  var bg = document.getElementById('parallaxBg');
+  if (bg) {
+    bg.style.transform = 'translateY(' + window.scrollY * 0.4 + 'px)';
+  }
+}, { passive: true });
 
 document.addEventListener('click', function (e) {
   const nav = document.getElementById('mainNav');
@@ -32,9 +33,9 @@ document.addEventListener('click', function (e) {
 
 (function initTheme() {
   // Перевіряємо збережений вибір, або системні налаштування
-  const saved       = localStorage.getItem('theme');
+  const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const theme       = saved || (prefersDark ? 'dark' : 'light');
+  const theme = saved || (prefersDark ? 'dark' : 'light');
 
   applyTheme(theme);
 })();
