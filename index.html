@@ -3,18 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Штучний інтелект: що це таке, основні види ШІ, як він працює та де застосовується. Простий і зрозумілий путівник українською.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ШІ — Штучний Інтелект">
+  <meta property="og:description" content="Простий путівник у світ штучного інтелекту: від базових понять до реальних застосувань.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:url" content="https://im2752844-wq.github.io/AI/">
+  <meta property="og:image" content="https://journal.ilounge.ua/files/articles/kak-narisovat-portret-v-ii-06.webp">
+  <link rel="canonical" href="https://im2752844-wq.github.io/AI/">
+
   <title>ШІ — Штучний Інтелект</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    /* sr-only — елемент невидимий, але читається скрінрідерами */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
 
   <nav class="nav" id="mainNav">
     <div class="nav__controls">
-      <button class="nav__toggle" onclick="toggleNav()">☰ Меню</button>
+      <button class="nav__toggle" onclick="toggleNav()" aria-expanded="false" aria-controls="navList" aria-label="Відкрити меню навігації">☰ Меню</button>
       <!-- КНОПКА ТЕМИ — текст оновлює JS автоматично -->
       <button class="nav__theme-btn" id="themeToggle" onclick="toggleTheme()">☾ Темна</button>
     </div>
-    <ul class="nav__list">
+    <ul class="nav__list" id="navList">
       <li><a href="aboutAI.html">Про ШІ</a></li>
       <li><a href="typesAI.html">Види ШІ</a></li>
       <li><a href="applications.html">Використання ШІ</a></li>
@@ -31,7 +54,7 @@
         <p style="color: var(--accent); font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;">Ласкаво просимо</p>
         <h1>Штучний Інтелект:<br>що це і навіщо?</h1>
         <p style="font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 580px;">Цей сайт — простий путівник у світ ШІ. Тут зібрано все найважливіше: від базових понять до реальних застосувань та новин.</p>
-        <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+        <div class="hero-btns" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
         <a href="aboutAI.html" style="background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Почати читати</a>
         <a href="historyAI.html" style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 28px; border-radius: 12px; text-decoration: none; font-size: 0.97rem;">Історія ШІ</a>
       </div>
@@ -71,22 +94,33 @@
     <h2>Відгуки про сайт</h2>
 
     <form id="reviewForm">
-      <input id="rName" placeholder="Ваше ім'я" required autocomplete="off" />
-      <select id="rRating">
+      <!-- Мітки <label> пов'язані з полями через for="id"
+           Це виправляє помилку PageSpeed:
+           "Form elements do not have associated labels"
+           Текст label прихований візуально (.sr-only), але
+           читається скрінрідерами — доступність 100% без зміни дизайну -->
+      <label for="rName" class="sr-only">Ваше ім'я</label>
+      <input id="rName" name="rName" placeholder="Ваше ім'я" required autocomplete="name" />
+
+      <label for="rRating">Оцінка</label>
+      <select id="rRating" name="rRating">
         <option value="5">★★★★★</option>
         <option value="4">★★★★☆</option>
         <option value="3">★★★☆☆</option>
         <option value="2">★★☆☆☆</option>
         <option value="1">★☆☆☆☆</option>
       </select>
-      <textarea id="rText" placeholder="Ваш відгук..." rows="3" required></textarea>
+
+      <label for="rText" class="sr-only">Ваш відгук</label>
+      <textarea id="rText" name="rText" placeholder="Ваш відгук..." rows="3" required></textarea>
+
       <button type="submit">Надіслати</button>
     </form>
 
     <div id="reviewsList"></div>
   </footer>
 
-<script src="Main.JS"></script>
+<script src="Main.JS" defer></script>
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
