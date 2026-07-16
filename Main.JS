@@ -4,9 +4,6 @@ function toggleNav() {
   if (!nav) return;
   var btn    = nav.querySelector('.nav__toggle');
   var isOpen = nav.classList.toggle('open');
-  /* ACCESSIBILITY: оновлюємо aria-expanded при кожному відкритті/закритті
-     Lighthouse перевіряє: якщо aria-expanded="false" завжди — це помилка.
-     Тепер значення відповідає реальному стану меню. */
   if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 }
 document.addEventListener('click', function (e) {
@@ -30,7 +27,6 @@ document.addEventListener('click', function (e) {
   });
 })();
 
-/* ── 3. ТЕМА (темна / світла) ────────────────────────────── */
 (function initTheme() {
   var saved      = localStorage.getItem('theme');
   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -102,11 +98,6 @@ function toggleTheme() {
   }
 })();
 
-/* ── 5. АНІМАЦІЯ ПОЯВИ ЕЛЕМЕНТІВ (IntersectionObserver) ─────
-   Ця частина вже була ефективною в оригіналі.
-   IntersectionObserver — правильний підхід: не навантажує scroll.
-   Лишаємо без змін, тільки невелике очищення коду.
-   ──────────────────────────────────────────────────────────── */
 (function initFadeInAnimations() {
   var animatedElements = document.querySelectorAll(
     '.card, .news-article, .section h2, .intro-text, .styled-table, .page-header, .styled-list li'

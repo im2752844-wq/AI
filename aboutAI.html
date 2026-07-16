@@ -114,17 +114,6 @@
 
     <section class="section">
       <h2>Етика та Майбутнє ШІ</h2>
-
-      <!-- ОПТИМІЗАЦІЯ: loading="lazy" + width/height на зображенні
-           ПРОБЛЕМА оригіналу: зображення завантажується одразу навіть якщо
-           внизу сторінки, і без width/height браузер не знає розміру — 
-           сторінка "стрибає" коли зображення завантажується (Layout Shift).
-
-           РІШЕННЯ:
-           - loading="lazy" — завантажуємо тільки при наближенні до viewport
-           - width + height — браузер заздалегідь резервує місце,
-             сторінка не стрибає (усуває CLS — Cumulative Layout Shift)
-           - decoding="async" — декодування зображення не блокує рендеринг -->
       <img
         class="section-img"
         src="https://mindscope.biz.ua/wp-content/uploads/2024/11/1ddea6f4-e0ab-4fa6-bf7f-edc367c4ecc5_result.jpg"

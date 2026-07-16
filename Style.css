@@ -1,9 +1,6 @@
-/* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ============================================================
-   ТЕМНА ТЕМА (за замовчуванням)
-   ============================================================ */
+
 :root,
 [data-theme="dark"] {
   --bg:              #0d0f14;
@@ -22,9 +19,6 @@
   --scroll-btn-bg:   #4f8ef7;
 }
 
-/* ============================================================
-   СВІТЛА ТЕМА
-   ============================================================ */
 [data-theme="light"] {
   --bg:              #f2f4fb;
   --bg-card:         #ffffff;
@@ -42,26 +36,12 @@
   --scroll-btn-bg:   #2563eb;
 }
 
-/* ============================================================
-   ОПТИМІЗАЦІЯ #1 — ПРИБИРАЄМО ГЛОБАЛЬНИЙ `* { transition }`
-   ─────────────────────────────────────────────────────────────
-   ПРОБЛЕМА: `*, *::before, *::after { transition: background-color ... }`
-   змушує браузер відслідковувати анімацію на КОЖНОМУ елементі на сторінці.
-   При будь-якій зміні теми браузер обходить сотні DOM-вузлів.
-   Це одна з найдорожчих CSS-операцій.
-
-   РІШЕННЯ: Transition призначаємо тільки тим елементам, яким він реально потрібен:
-   body (для теми), .card, .nav, кнопки, посилання.
-   ============================================================ */
-
-/* Перемикання теми — плавно міняємо тільки body */
 body {
   transition:
     background-color 0.35s ease,
     color            0.3s ease;
 }
 
-/* Картки — hover-ефект */
 .card {
   transition:
     background-color 0.2s ease,
@@ -70,7 +50,6 @@ body {
     box-shadow       0.25s ease;
 }
 
-/* Навігаційні посилання */
 .nav__list li a {
   transition:
     background-color 0.18s ease,
@@ -78,7 +57,6 @@ body {
     padding-left     0.2s ease;
 }
 
-/* Кнопки навігації */
 .nav__toggle,
 .nav__theme-btn {
   transition:
@@ -86,7 +64,6 @@ body {
     transform        0.15s ease;
 }
 
-/* Кнопка "вгору" */
 .scroll-top-btn {
   transition:
     opacity          0.3s ease,
@@ -94,16 +71,12 @@ body {
     background-color 0.2s ease;
 }
 
-/* Анімація появи елементів */
 .fade-in {
   transition:
     opacity   0.55s ease,
     transform 0.55s ease;
 }
 
-/* ============================================================
-   BODY
-   ============================================================ */
 body {
   font-family: 'Georgia', serif;
   background: var(--bg);
@@ -112,9 +85,6 @@ body {
   min-height: 100vh;
 }
 
-/* ============================================================
-   НАВІГАЦІЯ
-   ============================================================ */
 .nav {
   position: fixed;
   top: 18px;
@@ -210,27 +180,14 @@ body {
   pointer-events: none;
 }
 
-/* ============================================================
-   ОСНОВНИЙ КОНТЕЙНЕР
-   ============================================================ */
 .page {
   max-width: 900px;
   margin:    0 auto;
   padding:   60px 24px 80px;
 
-  /* ============================================================
-     ОПТИМІЗАЦІЯ #2 — content-visibility: auto
-     ─────────────────────────────────────────────────────────
-     Браузер пропускає рендеринг контенту, який не видно на екрані.
-     На довгих сторінках (applications.html, typesAI.html) це
-     прискорює початковий рендер на 30–60%.
-     ============================================================ */
   content-visibility: auto;
 }
 
-/* ============================================================
-   ХЕДЕР СТОРІНКИ
-   ============================================================ */
 .page-header {
   margin-bottom:  48px;
   padding-bottom: 28px;
@@ -249,9 +206,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* ============================================================
-   СЕКЦІЯ
-   ============================================================ */
 .section {
   margin-bottom: 56px;
 }
@@ -264,16 +218,12 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-/* ============================================================
-   КАРТКИ
-   ============================================================ */
 .card {
   background:    var(--bg-card);
   border:        1px solid var(--border);
   border-radius: 12px;
   padding:       24px 28px;
   margin-bottom: 18px;
-  /* transition описаний вище в блоці "Transition тільки там де потрібно" */
 }
 
 .card:hover {
@@ -293,23 +243,12 @@ body {
   color: var(--text-muted);
 }
 
-/* ============================================================
-   ОПТИМІЗАЦІЯ #3 — ВИДАЛЯЄМО ДУБЛЮВАННЯ display у .card-grid
-   ─────────────────────────────────────────────────────────────
-   ПРОБЛЕМА: спочатку стояло `display: flex; flex-wrap: wrap;`
-   а потім одразу `display: grid` — браузер виконував flex-layout,
-   потім одразу перераховував його як grid. Перший display марний.
-   РІШЕННЯ: тільки grid.
-   ============================================================ */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 18px;
 }
 
-/* ============================================================
-   СПИСОК
-   ============================================================ */
 .styled-list {
   list-style: none;
   padding:    0;
@@ -332,16 +271,12 @@ body {
 .styled-list li:last-child { border-bottom: none; }
 .styled-list li strong     { color: var(--text); }
 
-/* ============================================================
-   НОВИНИ
-   ============================================================ */
 .news-article {
   background:    var(--bg-card);
   border:        1px solid var(--border);
   border-radius: 12px;
   padding:       24px 28px;
   margin-bottom: 18px;
-  /* Додаємо transition тільки для hover-ефекту якщо хочемо */
   transition:
     background-color 0.2s ease,
     border-color     0.2s ease;
@@ -353,9 +288,6 @@ body {
 .news-article a              { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
 .news-article a:hover        { text-decoration: underline; }
 
-/* ============================================================
-   ТАБЛИЦЯ
-   ============================================================ */
 .styled-table {
   width:           100%;
   border-collapse: collapse;
@@ -382,9 +314,6 @@ body {
 .styled-table tr:last-child td { border-bottom: none; }
 .styled-table tr:hover td      { background: var(--bg-card-hover); }
 
-/* ============================================================
-   ВСТУПНИЙ ТЕКСТ
-   ============================================================ */
 .intro-text {
   color:         var(--text-muted);
   font-size:     1.05rem;
@@ -392,39 +321,24 @@ body {
   line-height:   1.8;
 }
 
-/* ============================================================
-   ЗОБРАЖЕННЯ
-   ============================================================ */
 .section-img {
   width:         100%;
   max-width:     700px;
   border-radius: 12px;
   margin:        20px 0;
   display:       block;
-  /* ОПТИМІЗАЦІЯ #4: height: auto щоб зберігати aspect ratio
-     і не допускати Layout Shift (CLS) */
+
   height:        auto;
 }
 
-/* ============================================================
-   ПОСИЛАННЯ
-   ============================================================ */
 a { color: var(--accent); }
 a:hover { color: var(--accent-hover); }
 
-/* ============================================================
-   ВІДЕО (iframe)
-   ============================================================ */
 .video-wrap {
   margin:        24px 0;
   border-radius: 12px;
   overflow:      hidden;
   border:        1px solid var(--border);
-  /* ОПТИМІЗАЦІЯ #5: aspect-ratio замість фіксованої висоти
-     Це дозволяє браузеру зарезервувати місце ДО завантаження iframe,
-     що усуває стрибок сторінки (Layout Shift).
-     Раніше: height: 315px на iframe без контейнера з фіксованими розмірами.
-  */
   aspect-ratio: 16 / 9;
   width: 100%;
 }
@@ -436,9 +350,6 @@ a:hover { color: var(--accent-hover); }
   border:  none;
 }
 
-/* ============================================================
-   КНОПКА "ВГОРУ"
-   ============================================================ */
 .scroll-top-btn {
   position:      fixed;
   bottom:        32px;
@@ -477,9 +388,6 @@ a:hover { color: var(--accent-hover); }
   transform: translateY(0);
 }
 
-/* ============================================================
-   АНІМАЦІЯ ПОЯВИ (Fade In)
-   ============================================================ */
 .fade-in {
   opacity:   0;
   transform: translateY(24px);
@@ -490,9 +398,6 @@ a:hover { color: var(--accent-hover); }
   transform: translateY(0);
 }
 
-/* ============================================================
-   ПАРАЛАКС ГЕРОЙ
-   ============================================================ */
 .parallax-hero {
   position:        relative;
   height:          100vh;
@@ -511,9 +416,7 @@ a:hover { color: var(--accent-hover); }
   background-image:    url('https://journal.ilounge.ua/files/articles/kak-narisovat-portret-v-ii-06.webp');
   background-size:     cover;
   background-position: center;
-  /* will-change: transform — правильно для GPU-шару.
-     ВАЖЛИВО: НЕ ставимо will-change на .card або інші елементи,
-     бо це займає відеопам'ять. Тільки там де реально є постійна анімація. */
+
   will-change: transform;
 }
 
@@ -538,9 +441,6 @@ a:hover { color: var(--accent-hover); }
   color:         #fff;
 }
 
-/* ============================================================
-   ВІДГУКИ / FOOTER
-   ============================================================ */
 .reviews-footer {
   max-width: 900px;
   margin:    40px auto 0;
@@ -570,7 +470,6 @@ a:hover { color: var(--accent-hover); }
   color:       var(--text);
   font-family: inherit;
   font-size:   0.97rem;
-  /* Transition для плавної зміни теми — але тільки на потрібних властивостях */
   transition:
     background-color 0.3s ease,
     border-color     0.3s ease,
@@ -603,9 +502,6 @@ a:hover { color: var(--accent-hover); }
 .review-stars { color: #f5a623; margin-left: 10px; }
 .review-item p { color: var(--text-muted); margin-top: 6px; }
 
-/* ============================================================
-   АДАПТИВНІСТЬ
-   ============================================================ */
 @media (max-width: 768px) {
   .page-header h1 { font-size: 2rem; }
   .section h2     { font-size: 1.4rem; }
